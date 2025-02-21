@@ -255,7 +255,7 @@ export default function PunishmentDisplay() {
                                     hover:from-rose-500 hover:to-pink-500 text-white rounded-lg
                                     transition-all duration-300 font-bold"
                         >
-                          Try Different Task (Once Only)&apos;
+                          Try Different Task (Once Only)
                         </motion.button>
                       )}
                     </motion.div>

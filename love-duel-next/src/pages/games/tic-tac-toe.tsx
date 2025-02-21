@@ -120,7 +120,7 @@ export default function KinkyConquest() {
     }
   }, [])
 
-  const [currentWinner, winningCells] = calculateWinner(board);
+  const [winner, winningLine] = calculateWinner(board);
 
   if (!gameSettings) return null
 
@@ -185,8 +185,7 @@ export default function KinkyConquest() {
         {/* Game Board */}
         <div className="relative grid grid-cols-3 gap-2 p-2 rounded-xl bg-black/70 border border-violet-500/30">
           {board.map((value, index) => {
-            const [_, winningCells] = calculateWinner(board);
-            const isWinningCell = winner && winningCells?.includes(index) && board[index] === winner;
+            const isWinningCell = winningLine?.includes(index);
             
             return (
               <motion.button
