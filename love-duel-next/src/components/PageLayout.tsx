@@ -1,35 +1,25 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface PageLayoutProps {
-  children: ReactNode;
   backgroundImage: string;
+  children: React.ReactNode;
 }
 
-export default function PageLayout({ children, backgroundImage }: PageLayoutProps) {
+export default function PageLayout({ backgroundImage, children }: PageLayoutProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="min-h-screen relative"
-    >
-      {/* Background */}
-      <div 
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-      </div>
-      
-      {/* Content */}
+    <main className="min-h-screen relative">
+      <Image
+        src={backgroundImage}
+        alt="Background"
+        fill
+        className="object-cover"
+        priority
+      />
       <div className="relative z-10">
         {children}
       </div>
-    </motion.div>
+    </main>
   );
 } 
