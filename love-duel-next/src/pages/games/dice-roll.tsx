@@ -125,7 +125,7 @@ export default function DiceRoll() {
         {!winner && (
           <div className="text-center mb-6">
             <p className="text-violet-300 text-xl">
-              {gameSettings.players[currentPlayer].name}'s Turn
+              {gameSettings.players[currentPlayer].name}&apos;s Turn
             </p>
           </div>
         )}

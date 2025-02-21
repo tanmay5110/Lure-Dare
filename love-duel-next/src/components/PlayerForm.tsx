@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { Playfair_Display } from 'next/font/google'
-
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
 
 export default function PlayerForm({ className }: { className?: string }) {
   const router = useRouter();

@@ -21,10 +21,8 @@ export default function KinkyConquest() {
   const [isXNext, setIsXNext] = useState(true)
   const [gameSettings, setGameSettings] = useState<GameSettings | null>(null)
   const [winner, setWinner] = useState<Player | 'draw' | null>(null)
-  const [winningLine, setWinningLine] = useState<number[] | null>(null)
   const [matchCount, setMatchCount] = useState(0)
   const [scores, setScores] = useState({ player1: 0, player2: 0 })
-  const [showMatchAnimation, setShowMatchAnimation] = useState(false)
   const [gameStatus, setGameStatus] = useState<string>('')
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
 
@@ -113,16 +111,16 @@ export default function KinkyConquest() {
     setIsXNext(true)
     setWinner(null)
     setGameStatus('')
-    setShowMatchAnimation(false)
   }
 
   useEffect(() => {
     return () => {
       setBoard(Array(9).fill(null))
       setWinner(null)
-      setShowMatchAnimation(false)
     }
   }, [])
+
+  const [currentWinner, winningCells] = calculateWinner(board);
 
   if (!gameSettings) return null
 
@@ -280,7 +278,7 @@ export default function KinkyConquest() {
                 className="bg-black/80 border border-violet-500/30 p-8 rounded-xl
                           backdrop-blur-md shadow-[0_0_15px rgba(139,92,246,0.3)]"
               >
-                <h2 className="text-2xl font-bold text-white mb-6">It's a Draw!</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">It&apos;s a Draw!</h2>
                 <motion.button
                   whileHover={{ 
                     scale: 1.05,

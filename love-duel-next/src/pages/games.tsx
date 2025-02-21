@@ -10,9 +10,17 @@ interface GameData {
   description: string
 }
 
+interface GameSettings {
+  difficulty: string
+  players: {
+    player1: { name: string; gender: string }
+    player2: { name: string; gender: string }
+  }
+}
+
 export default function GamesSelection() {
   const router = useRouter()
-  const [gameSettings, setGameSettings] = useState<any>(null)
+  const [gameSettings, setGameSettings] = useState<GameSettings | null>(null)
 
   useEffect(() => {
     const settings = localStorage.getItem('gameSettings')
