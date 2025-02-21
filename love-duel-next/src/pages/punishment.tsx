@@ -286,7 +286,7 @@ export default function PunishmentDisplay() {
                         }}
                         className="text-2xl font-bold text-white mb-4"
                       >
-                        Time's Up!
+                        Time&apos;s Up!
                       </motion.p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                         <motion.button
