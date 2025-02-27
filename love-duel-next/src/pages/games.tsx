@@ -44,18 +44,7 @@ export default function GamesSelection() {
       image: '/images/games/dice.jpg',
       description: 'Test your luck with even or odd rolls'
     },
-    {
-      id: 'memory',
-      title: 'Memory Match',
-      image: '/images/games/memory.jpg',
-      description: 'Test your memory by matching pairs of cards'
-    },
-    {
-      id: 'reaction',
-      title: 'Quick Reaction',
-      image: '/images/games/reaction.jpg',
-      description: 'Click the target as fast as you can'
-    }
+   
   ]
 
   const handleGameSelect = (gameId: string) => {

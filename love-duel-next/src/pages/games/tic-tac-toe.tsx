@@ -120,7 +120,7 @@ export default function KinkyConquest() {
     }
   }, [])
 
-  const [winner, winningLine] = calculateWinner(board);
+  const [currentWinner, winningLine] = calculateWinner(board);
 
   if (!gameSettings) return null
 
